@@ -1,11 +1,24 @@
-### Getting started
+## Introduction
+
+
+## Installation
 
 `npm install`
 
-Start dev server:
+`npm run electron`
+
+In a seperate terminal window, same directory run  
 
 `npm start`
 
-In a new terminal window:
+Then hit cmd/ctrl + r to refresh the electron app window 
 
-`npm run electron`
+## API Reference
+
+[Udemy Course](https://www.udemy.com/electron-react-tutorial/)
+
+[Electron](https://electron.atom.io/)
+
+## License
+
+This project is under the GLPv3 license. All contributions are welcome. Fork away.  
