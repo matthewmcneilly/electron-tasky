@@ -22,6 +22,10 @@ app.on('ready', () => {
   const iconPath = path.join(__dirname, `./src/assets/${iconName}`);
   tray = new Tray(iconPath);
   tray.on('click', () => {
-    mainWindow.show(); // Display mainWindow when tray icon is clicked
+    if (mainWindow.isVisible()) {
+      mainWindow.hide(); // When tray icon clicked, hide if shown
+    } else {
+      mainWindow.show(); // WHen tray icon clicked, show if hidden 
+    }
   });
 });
