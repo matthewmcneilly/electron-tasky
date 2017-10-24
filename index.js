@@ -21,11 +21,26 @@ app.on('ready', () => {
   // Path module abstracts out operating system difference in paths then joins appropiate icon to the path
   const iconPath = path.join(__dirname, `./src/assets/${iconName}`);
   tray = new Tray(iconPath);
-  tray.on('click', () => {
+  tray.on('click', (event, bounds) => {
+
+    // Click event bounds
+    // console.log(bounds.x, bounds.y)
+    const { x, y } = bounds;
+
+    // Window height and width
+    // Uses the height and width as defined above in app.on('ready'), just in case it gets changed
+    const { height, width } = mainWindow.getBounds();
+
     if (mainWindow.isVisible()) {
       mainWindow.hide(); // When tray icon clicked, hide if shown
     } else {
-      mainWindow.show(); // WHen tray icon clicked, show if hidden 
+      mainWindow.setBounds({
+        x: x - width / 2,
+        y, // Same as y: y, condenses using ES6
+        height,
+        width
+      });
+      mainWindow.show(); // WHen tray icon clicked, show if hidden
     }
   });
 });
