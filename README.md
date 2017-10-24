@@ -5,11 +5,11 @@
 
 `npm install`
 
-`npm run electron`
+`npm start`
 
 In a seperate terminal window, same directory run  
 
-`npm start`
+`npm run electron`
 
 Then hit cmd/ctrl + r to refresh the electron app window 
 
