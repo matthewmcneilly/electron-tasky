@@ -34,10 +34,12 @@ app.on('ready', () => {
     if (mainWindow.isVisible()) {
       mainWindow.hide(); // When tray icon clicked, hide if shown
     } else {
+      // Position window under the tray icon, y position is different depending on OS
+      const yPosition = process.platform === 'darwin' ? y : Y - height;
       mainWindow.setBounds({
         x: x - width / 2,
-        y, // Same as y: y, condenses using ES6
-        height,
+        y: yPosition,
+        height, // Same as height : height, condensed using ES6
         width
       });
       mainWindow.show(); // WHen tray icon clicked, show if hidden
