@@ -11,7 +11,9 @@ In a seperate terminal window, same directory run
 
 `npm run electron`
 
-Then hit cmd/ctrl + r to refresh the electron app window 
+Click on the tray icon to show the application. 
+
+Hit cmd/ctrl + r to refresh the electron app window. 
 
 ## API Reference
 
