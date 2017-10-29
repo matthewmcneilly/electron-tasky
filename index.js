@@ -20,7 +20,7 @@ app.on('ready', () => {
   const iconName = process.platform === 'win32' ? 'windows-icon.png' : 'iconTemplate.png';
   // Path module abstracts out operating system difference in paths then joins appropiate icon to the path
   const iconPath = path.join(__dirname, `./src/assets/${iconName}`);
-  tray = new Tray(iconPath);
+  tray = new Tray(iconPath); // uses Tray class/constructor 
   tray.on('click', (event, bounds) => {
 
     // Click event bounds
